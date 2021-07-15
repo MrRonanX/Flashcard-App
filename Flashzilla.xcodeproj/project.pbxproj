@@ -8,18 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		34D2E82D269AE8960021F7D5 /* FlashzillaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E82C269AE8960021F7D5 /* FlashzillaApp.swift */; };
-		34D2E82F269AE8960021F7D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E82E269AE8960021F7D5 /* ContentView.swift */; };
+		34D2E82F269AE8960021F7D5 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E82E269AE8960021F7D5 /* GameScreen.swift */; };
 		34D2E831269AE8980021F7D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34D2E830269AE8980021F7D5 /* Assets.xcassets */; };
 		34D2E834269AE8980021F7D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34D2E833269AE8980021F7D5 /* Preview Assets.xcassets */; };
+		34D2E83C269AE9470021F7D5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E83B269AE9470021F7D5 /* Card.swift */; };
+		34D2E83E269B05FB0021F7D5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E83D269B05FB0021F7D5 /* CardView.swift */; };
+		34D2E881269EA9F30021F7D5 /* AddCardsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E880269EA9F30021F7D5 /* AddCardsScreen.swift */; };
+		34F1209F269F166A00664EAF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F1209E269F166A00664EAF /* SettingsView.swift */; };
+		34F120A2269FDA1F00664EAF /* View + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F120A1269FDA1F00664EAF /* View + Ext.swift */; };
+		34F120A7269FDA9500664EAF /* MainScreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F120A6269FDA9500664EAF /* MainScreenButton.swift */; };
+		34F120A9269FE09900664EAF /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F120A8269FE09900664EAF /* GameViewModel.swift */; };
+		34F120AF269FE1B800664EAF /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F120AE269FE1B800664EAF /* Modifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		34D2E829269AE8960021F7D5 /* Flashzilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashzilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D2E82C269AE8960021F7D5 /* FlashzillaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashzillaApp.swift; sourceTree = "<group>"; };
-		34D2E82E269AE8960021F7D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		34D2E82E269AE8960021F7D5 /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
 		34D2E830269AE8980021F7D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34D2E833269AE8980021F7D5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		34D2E835269AE8980021F7D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34D2E83B269AE9470021F7D5 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		34D2E83D269B05FB0021F7D5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		34D2E880269EA9F30021F7D5 /* AddCardsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardsScreen.swift; sourceTree = "<group>"; };
+		34F1209E269F166A00664EAF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		34F120A1269FDA1F00664EAF /* View + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + Ext.swift"; sourceTree = "<group>"; };
+		34F120A6269FDA9500664EAF /* MainScreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenButton.swift; sourceTree = "<group>"; };
+		34F120A8269FE09900664EAF /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		34F120AE269FE1B800664EAF /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,10 +69,13 @@
 			isa = PBXGroup;
 			children = (
 				34D2E82C269AE8960021F7D5 /* FlashzillaApp.swift */,
-				34D2E82E269AE8960021F7D5 /* ContentView.swift */,
+				34F120A3269FDA4200664EAF /* CustomViews */,
+				34F120A0269FDA0700664EAF /* Extensions */,
+				34F120AA269FE10400664EAF /* Screens */,
 				34D2E830269AE8980021F7D5 /* Assets.xcassets */,
 				34D2E835269AE8980021F7D5 /* Info.plist */,
 				34D2E832269AE8980021F7D5 /* Preview Content */,
+				34D2E83B269AE9470021F7D5 /* Card.swift */,
 			);
 			path = Flashzilla;
 			sourceTree = "<group>";
@@ -67,6 +86,59 @@
 				34D2E833269AE8980021F7D5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		34F120A0269FDA0700664EAF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				34F120A1269FDA1F00664EAF /* View + Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		34F120A3269FDA4200664EAF /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				34D2E83D269B05FB0021F7D5 /* CardView.swift */,
+				34F120A6269FDA9500664EAF /* MainScreenButton.swift */,
+				34F120AE269FE1B800664EAF /* Modifiers.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		34F120AA269FE10400664EAF /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				34F120AD269FE14F00664EAF /* Settings */,
+				34F120AC269FE13D00664EAF /* AddCards */,
+				34F120AB269FE11400664EAF /* MainScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		34F120AB269FE11400664EAF /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				34F120A8269FE09900664EAF /* GameViewModel.swift */,
+				34D2E82E269AE8960021F7D5 /* GameScreen.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		34F120AC269FE13D00664EAF /* AddCards */ = {
+			isa = PBXGroup;
+			children = (
+				34D2E880269EA9F30021F7D5 /* AddCardsScreen.swift */,
+			);
+			path = AddCards;
+			sourceTree = "<group>";
+		};
+		34F120AD269FE14F00664EAF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				34F1209E269F166A00664EAF /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +210,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34D2E82F269AE8960021F7D5 /* ContentView.swift in Sources */,
+				34D2E82F269AE8960021F7D5 /* GameScreen.swift in Sources */,
+				34D2E83C269AE9470021F7D5 /* Card.swift in Sources */,
+				34D2E83E269B05FB0021F7D5 /* CardView.swift in Sources */,
+				34F120A7269FDA9500664EAF /* MainScreenButton.swift in Sources */,
+				34F120AF269FE1B800664EAF /* Modifiers.swift in Sources */,
+				34F1209F269F166A00664EAF /* SettingsView.swift in Sources */,
+				34F120A2269FDA1F00664EAF /* View + Ext.swift in Sources */,
+				34D2E881269EA9F30021F7D5 /* AddCardsScreen.swift in Sources */,
+				34F120A9269FE09900664EAF /* GameViewModel.swift in Sources */,
 				34D2E82D269AE8960021F7D5 /* FlashzillaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
