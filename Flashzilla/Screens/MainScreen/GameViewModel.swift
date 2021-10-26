@@ -13,9 +13,6 @@ final class GameViewModel: ObservableObject {
     @AppStorage("Cards")    var cardsData       : Data?
     @AppStorage("AskAgain") var shouldAskAgain  = false
     
-    @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
-    @Environment(\.accessibilityEnabled) var accessibilityEnabled
-    
     @Published var cards                     = [Card]()
     @Published var timeRemaining             = 100
     @Published var engine                    : CHHapticEngine?

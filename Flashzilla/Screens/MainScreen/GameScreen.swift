@@ -9,12 +9,15 @@ import SwiftUI
 
 struct GameScreen: View {
     @StateObject var viewModel = GameViewModel()
-
+    @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
+    @Environment(\.accessibilityEnabled) var accessibilityEnabled
+    
     @State private var isShowingEditScreen       = false
     @State private var isShowingSettingsScreen   = false
 
     
     var body: some View {
+        GeometryReader { geo in
         ZStack {
             backgroundImage
             MainScreenButton(imageName: "gearshape.2", horizontalPosition: .leading) { isShowingSettingsScreen = true }
@@ -27,7 +30,8 @@ struct GameScreen: View {
                     .onChange(of: viewModel.timeRemaining, perform: viewModel.timesOutRemoveAllCards)
                 ZStack {
                     ForEach(0..<viewModel.cards.count, id: \.self) { index in
-                        CardView(card: viewModel.cards[index]) { answerValidation in
+                        
+                            CardView(card: viewModel.cards[index], size: geo.size) { answerValidation in
                             withAnimation {
                                 viewModel.removeCard(at: index, answerIsCorrect: answerValidation)
                             }
@@ -35,6 +39,7 @@ struct GameScreen: View {
                         .stacked(at: index, in: viewModel.cards.count)
                         .allowsHitTesting(index == viewModel.cards.count - 1)
                         .accessibility(hidden: index < viewModel.cards.count - 1)
+                        
                     }.allowsHitTesting(viewModel.canTapCards)
                     
                     if viewModel.cards.isEmpty {
@@ -42,16 +47,17 @@ struct GameScreen: View {
                     }
                 }
             }
-            if viewModel.differentiateWithoutColor || viewModel.accessibilityEnabled {
+            if differentiateWithoutColor || accessibilityEnabled {
                 differentiateWithoutColorView
             }
         }
-        .sheet(isPresented: $isShowingEditScreen, onDismiss: viewModel.resetCards) { AddCardsScreen().environmentObject(viewModel) }
+        .sheet(isPresented: $isShowingEditScreen, onDismiss: viewModel.resetCards) { AddCardsScreen(size: geo.size).environmentObject(viewModel) }
         .sheet(isPresented: $isShowingSettingsScreen, onDismiss: viewModel.resetCards) { SettingsView() }
         .onAppear(perform: viewModel.resetCards)
         .onReceive(viewModel.timer) { _ in viewModel.timerAction() }
         .onReceive(applicationWillEnterBackground) { _ in viewModel.stopTimer() }
         .onReceive(applicationEnterForeground) { _ in viewModel.resumeTimer() }
+        }
     }
     
     var applicationWillEnterBackground: NotificationCenter.Publisher {

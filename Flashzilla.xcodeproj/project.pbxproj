@@ -19,6 +19,7 @@
 		34F120A7269FDA9500664EAF /* MainScreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F120A6269FDA9500664EAF /* MainScreenButton.swift */; };
 		34F120A9269FE09900664EAF /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F120A8269FE09900664EAF /* GameViewModel.swift */; };
 		34F120AF269FE1B800664EAF /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F120AE269FE1B800664EAF /* Modifiers.swift */; };
+		34F120B326A0375600664EAF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F120B226A0375600664EAF /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		34F120A6269FDA9500664EAF /* MainScreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenButton.swift; sourceTree = "<group>"; };
 		34F120A8269FE09900664EAF /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		34F120AE269FE1B800664EAF /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		34F120B226A0375600664EAF /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +101,8 @@
 		34F120A3269FDA4200664EAF /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				34D2E83D269B05FB0021F7D5 /* CardView.swift */,
+				34F120B126A0374100664EAF /* ImagePicker */,
+				34F120B0269FEED600664EAF /* CardView */,
 				34F120A6269FDA9500664EAF /* MainScreenButton.swift */,
 				34F120AE269FE1B800664EAF /* Modifiers.swift */,
 			);
@@ -139,6 +142,22 @@
 				34F1209E269F166A00664EAF /* SettingsView.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		34F120B0269FEED600664EAF /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				34D2E83D269B05FB0021F7D5 /* CardView.swift */,
+			);
+			path = CardView;
+			sourceTree = "<group>";
+		};
+		34F120B126A0374100664EAF /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				34F120B226A0375600664EAF /* ImagePicker.swift */,
+			);
+			path = ImagePicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +236,7 @@
 				34F120AF269FE1B800664EAF /* Modifiers.swift in Sources */,
 				34F1209F269F166A00664EAF /* SettingsView.swift in Sources */,
 				34F120A2269FDA1F00664EAF /* View + Ext.swift in Sources */,
+				34F120B326A0375600664EAF /* ImagePicker.swift in Sources */,
 				34D2E881269EA9F30021F7D5 /* AddCardsScreen.swift in Sources */,
 				34F120A9269FE09900664EAF /* GameViewModel.swift in Sources */,
 				34D2E82D269AE8960021F7D5 /* FlashzillaApp.swift in Sources */,

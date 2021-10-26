@@ -16,6 +16,7 @@ struct CardView: View {
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
     @Environment(\.accessibilityEnabled) var accessibilityEnabled
     let card: Card
+    let size: CGSize
     @State private var feedback = UINotificationFeedbackGenerator()
     @State var isShowingAnswer = false
     @State var offset = CGSize.zero
@@ -24,20 +25,21 @@ struct CardView: View {
     
     
     var body: some View {
+        
         ZStack {
             cardBackground
             VStack {
                 if accessibilityEnabled {
                     accessibilityTextView
                 } else {
-                    cardTextView
+                    mainCardView
                     
                 }
             }
             .padding()
             .multilineTextAlignment(.center)
         }
-        .frame(width: 450, height: 250)
+        .frame(width: size.width * 0.7, height: size.width * 0.4)
         .cardMovementAnimation(with: offset)
         .accessibility(addTraits: .isButton)
         .gesture(DragGesture()
@@ -48,6 +50,7 @@ struct CardView: View {
                     .onEnded { _ in cardSwiped() })
         .onTapGesture { isShowingAnswer.toggle() }
         .animation(.spring())
+        
     }
     
     var cardBackground: some View {
@@ -61,17 +64,30 @@ struct CardView: View {
             .shadow(radius: 10)
     }
     
-    var cardTextView: some View {
+    var mainCardView: some View {
         Group {
-            Text(card.prompt)
-                .cardTextStyle()
-            if isShowingAnswer {
+            if !isShowingAnswer {
+                VStack {
+                    Text(card.prompt)
+                        .cardTextStyle()
+                    Spacer()
+                    if let uiImage = card.image {
+                        Image(uiImage: uiImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: size.width * 0.3)
+                        .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                        .shadow(radius: 10)
+                    }
+                }
+            } else {
                 Text(card.answer)
                     .font(.largeTitle)
                     .foregroundColor(.gray)
             }
         }
     }
+
     
     var accessibilityTextView: some View {
         Text(isShowingAnswer ? card.answer : card.prompt)
@@ -109,6 +125,6 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(card: Card.example)
+        CardView(card: Card.example, size: CGSize(width: 390, height: 844))
     }
 }
